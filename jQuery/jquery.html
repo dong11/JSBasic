@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery学习1</title>
+    <!--引入百度中的jQuery库-->
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js">
+    </script>
+
+    <script>
+        $(function(){
+            $("#btnHide").click(function(){
+                $("#text").hide();
+            });
+            $("#btnShow").bind("click", function(){
+                $("#text").show();
+            });
+            $("#btnChange").bind("click", function () {
+                $("#text").html("Hello World too!");
+            });
+        });
+    </script>
+</head>
+<body>
+
+    <div id="text">Hello World!</div>
+
+    <br>
+
+    <button id="btnHide">点击隐藏</button>
+    <button id="btnShow">点击显示</button>
+    <button id="btnChange">点击改变</button>
+
+</body>
+</html>

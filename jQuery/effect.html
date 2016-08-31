@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JQuery效果</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        $(function(){
+            //显示/隐藏
+            $("#btn_hide").click(function(){
+                //参数1:持续时间
+                //参数2:操作后,运行的方法
+                $("#p_hide_show").hide(2000, function(){
+                    alert('隐藏了');
+                });
+            });
+            $("#btn_show").click(function(){
+                $("#p_hide_show").show(2000, function(){
+                    alert('显示了');
+                });
+            });
+            $("#btn_toggle").click(function(){
+                $("#p_hide_show").toggle(2000, function(){
+                    alert('执行了toggle');
+                });
+            });
+
+            //淡入/淡出
+            $("#btn_fadeIn").click(function(){
+                $("#p_fadeIn_Out").fadeIn(2000, function(){
+                    alert('淡入了');
+                });
+            });
+            $("#btn_fadeOut").click(function(){
+                $("#p_fadeIn_Out").fadeOut(2000, function(){
+                    alert('淡出了');
+                });
+            });
+            $("#btn_fadeToggle").click(function(){
+                $("#p_fadeIn_Out").fadeToggle(2000, function(){
+                    alert('执行了fadeToggle');
+                });
+            });
+            $("#btn_fadeTo").click(function(){
+                $("#p_fadeIn_Out").fadeTo(2000, 0.5, function(){
+                    alert('执行了fadeTo,设置透明度为:0.5');
+                });
+            });
+
+            //滑动:向上滑动:y坐标值变大,即沿屏幕向下滑
+            $("#btn_slideUp").click(function(){
+                $("#p_slide").slideUp(2000, function(){
+                    alert('向上滑动了');
+                });
+            });
+            $("#btn_slideDown").click(function(){
+                $("#p_slide").slideDown(2000, function(){
+                    alert('向下滑动了');
+                });
+            });
+            $("#btn_slideToggle").click(function(){
+                $("#p_slide").slideToggle(2000, function(){
+                    alert('执行了slideToggle:向上/下滑');
+                });
+            });
+
+            //动画
+            $("#btn_animateLeft").click(function(){
+                $("#p_animate").animate({left:'25px'},2000, function(){
+                    alert('向左移动了25px');
+                });
+            });
+            $("#btn_animete").click(function(){
+                $("#p_animate").animate({left:'250px',
+                    opacity:'0.5',
+                    height:'+=150px',
+                    width:'+=150px'},2000, function(){
+                    alert('移动了');
+                });
+            });
+            $("#btn_animeteQueue").click(function(){
+                var p = $("#p_animate")
+                p.animate({height:'300px',opacity:'0.4'},"slow");
+                p.animate({width:'300px',opacity:'0.8'},"slow");
+                p.animate({height:'100px',opacity:'0.4'},"slow");
+                p.animate({width:'100px',opacity:'0.8'},"slow");
+            });
+            $("#btn_stop").click(function(){
+                $("#p_animate").stop(true, true);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h3>显示/隐藏</h3>
+        <p id="p_hide_show">测试显示/隐藏</p>
+        <button id="btn_hide">隐藏</button>
+        <button id="btn_show">显示</button>
+        <button id="btn_toggle">toggle:隐藏/显示</button>
+    </div>
+
+    <div>
+        <h3>淡入/淡出</h3>
+        <p id="p_fadeIn_Out">测试淡入/淡出</p>
+        <button id="btn_fadeOut">淡出</button>
+        <button id="btn_fadeIn">淡入</button>
+        <button id="btn_fadeToggle">fadeToggle:淡入/淡出</button>
+        <button id="btn_fadeTo">fadeTo:淡入/淡出时,设置透明度</button>
+    </div>
+
+    <div>
+        <h3>滑动</h3>
+        <p id="p_slide">测试滑动</p>
+        <button id="btn_slideDown">向下滑</button>
+        <button id="btn_slideUp">向上滑</button>
+        <button id="btn_slideToggle">slideToggle:向上/下滑</button>
+    </div>
+
+    <div>
+        <h3>动画</h3>
+        <p id="p_animate" style="position:absolute;background:#98bf21;">测试动画</p>
+        <button id="btn_animateLeft">向左移动</button>
+        <button id="btn_animete">移动</button>
+        <button id="btn_animeteQueue">使用队列来移动</button>
+        <button id="btn_stop">停止动画</button>
+    </div>
+</body>
+</html>

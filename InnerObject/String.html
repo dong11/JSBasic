@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>String对象</title>
+    <script>
+        function test() {
+            //1.表达式:可用双引号也可用单引号
+            var str1 = "Hello World! Hello";
+            var str2 = "I'm Rex";
+            //            alert(str1 + "  " + str2);
+            //2.属性:length: 获取字符串长度
+            //            alert(str1.length);
+            //3.方法:
+            //indexOf():检索/查找字符串  若找到则返回指定字符首次出现的位置, 若找不到则返回-1;  可用来判断是否包含字符串
+            //            alert(str1.indexOf("World"));
+            //lastIndexOf():  从后面开始检索字符串
+            //            alert(str1.lastIndexOf("World"));
+            //match():找到一个或多个正则表达式的匹配  若找到则返回该匹配字符, 否则返回null
+            //            alert(str1.match("World"));
+            //replace(): 替换与正则表达式匹配的子串 返回新的字符串并不改变原来值
+            //            alert(str2.replace("Rex", "Zhangsan") + "\t" + str2);
+            //toUpperCase()/toLowerCase():将字符串转为大写/小写
+            //            alert(str1.toUpperCase() + "\t" + str1.toLowerCase());
+            //split():把字符串分割为字符串数组
+            //            alert(str1.split(" ").length);
+            //slice():从字符串中切取片段, 包含头不包含尾
+            //            alert(str1.slice(1,7));
+            //charAt(): 返回指定位置的字符
+            //            alert(str1.charAt(6));
+            //concat():连接字符串 //可以连接多个
+            //            alert(str1.concat("\t",str2));
+            //search():检索与正则表达式相匹配的值 返回检索字符首次出现的位置, 否则返回-1
+            //            alert(str1.search("Hello"));
+            //substr():从起始索引号提取字符串中指定数目的字符 第二个参数为子串的长度
+            //            alert(str1.substr(1, 3));
+            //substring():提取字符串中两个指定的索引号之间的字符 第二个参数为子串最后一个字符的索引值
+            //            alert(str1.substring(1, 3));
+        }
+    </script>
+</head>
+<body>
+<button onclick="test();">测试String</button>
+</body>
+</html>

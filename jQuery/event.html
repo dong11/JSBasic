@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery事件</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        //$(document).ready()
+//        $(document).ready(function(){
+//            alert("文档加载完成");
+//        });
+        //简写 $(document).ready()
+        $(function(){
+            alert("文档加载完成执行");
+
+            //click点(单)击事件
+            $("#click_hide").click(function(){
+                $("#p_click_hide").hide();
+            });
+
+            //dblclick双击事件
+            $("#dblclick_hide").dblclick(function(){
+                $(this).hide();
+            });
+
+            //mouseenter 鼠标划过触发事件
+            $("#p_mouseenter").mousemove(function(){
+                alert("鼠标划过");
+            });
+
+            //mouseleave 鼠标离开触发事件
+            $("#p_mouseleave").mouseleave(function(){
+                alert("鼠标离开");
+            });
+
+            //mousedown 按下鼠标按键触发事件
+            $("#p_mousedown").mousedown(function(){
+                alert("按下鼠标按键");
+            });
+
+            //mouseup 按下鼠标按键,并抬起触发事件
+            $("#p_mouseup").mouseup(function(){
+                alert("按下鼠标按键,并抬起");
+            });
+
+            //focus 聚焦触发
+            $("#input").focus(function(){
+                $(this).css("background-color","#cccccc");
+            });
+
+            //blur 失去焦点触发
+            $("#input").blur(function(){
+                $(this).css("background-color","#ffffff");
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <h3>$(document).ready()</h3>
+        <p>$(document).ready() 方法允许我们在文档完全加载完后执行函数。</p>
+    </div>
+
+    <div>
+        <h3>click点击事件</h3>
+        <p id="p_click_hide">click注释:当按钮点击事件被触发时会调用一个函数。</p>
+        <button id="click_hide">点击隐藏注释</button>
+    </div>
+
+    <div>
+        <h3>dblclick双击事件</h3>
+        <p id="p_dblclick_hide">dblclick注释:当双击元素时，会发生 dblclick 事件。</p>
+        <button id="dblclick_hide">双击隐藏按钮</button>
+    </div>
+
+    <div>
+        <h3>mouseenter</h3>
+        <p id="p_mouseenter">当鼠标指针穿过元素时，会发生 mouseenter 事件。 例:穿过弹出对话框</p>
+    </div>
+
+    <div>
+        <h3>mouseleave</h3>
+        <p id="p_mouseleave">当鼠标指针离开元素时，会发生 mouseleave 事件。 例:穿过弹出对话框</p>
+    </div>
+
+    <div>
+        <h3>mousedown</h3>
+        <p id="p_mousedown">当鼠标指针移动到元素上方，并按下鼠标按键时，会发生 mousedown 事件。</p>
+    </div>
+
+    <div>
+        <h3>mouseup</h3>
+        <p id="p_mouseup">当在元素上松开鼠标按钮时，会发生 mouseup 事件。</p>
+    </div>
+
+    <div>
+        <h3>focus:当元素获得焦点时，发生 focus 事件。</h3>
+        <h3>blur:当元素失去焦点时，发生 blur 事件。</h3>
+        <input id="input"></input>
+    </div>
+
+
+</body>
+</html>

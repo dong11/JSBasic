@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSON对象</title>
+
+    <script>
+        function test() {
+            //JSON 语法规则
+            //数据为 键/值 对。
+            //数据由逗号分隔。
+            //大括号保存对象
+            //方括号保存数组
+
+            //1.表达式
+            var json = {"firstName":"John", "lastName":"Doe"};
+            //将一个 JSON 字符串转换为 JavaScript 对象。
+            var json2 = JSON.parse('{"firstName":"John", "lastName":"Doe"}')
+            alert(json2["firstName"]);
+            //将 JavaScript 值转换为 JSON 字符串。
+//            alert(JSON.stringify(json));
+        }
+    </script>
+
+</head>
+<body>
+    <button onclick="test();">测试JSON</button>
+    <br>
+    <ul>JSON 语法规则
+        <li>数据为 键/值 对。</li>
+        <li>数据由逗号分隔。</li>
+        <li>大括号保存对象</li>
+        <li>方括号保存数组</li>
+    </ul>
+</body>
+</html>

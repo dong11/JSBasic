@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Array对象</title>
+    <script>
+        function test() {
+            //1.表达式
+            var arr1 = ['zhangsan', 'lisi', 'wangwu'];
+            var arr2 = new Array(18, 29, 21);
+//            alert(arr1 + '\t' + arr2);
+            //2.方法
+            //concat(): 连接两个或更多的数组，并返回结果。
+            //            alert(arr1.concat(arr2));
+            //every(): 检测数值元素的每个元素是否都符合条件。
+            //            alert(arr2.every(function(num){
+            //                return num > 17;
+            //            }));
+            //sort():对元素进行排序
+            //            alert(arr2.sort());
+            //            alert(arr2.sort(function(x, y){ //自定义排序方式
+            //                return x < y;
+            //            }));
+            //push(): 向数组的末尾添加一个或更多元素，并返回新的长度。
+            //            alert(arr2.push(22,17,29) + " " + arr2);
+            //pop():删除数组的最后一个元素并返回删除的元素。
+            //            alert(arr2.pop());
+            //reverse():反转数组的元素顺序。
+            //            alert(arr1.reverse());
+            //shift():删除并返回数组的第一个元素。
+            //            alert(arr2 + "\t" + arr2.shift() + "\t" + arr2);
+            //unshift():向数组的开头添加一个或更多元素，并返回新的长度。
+            //            alert(arr2 + "\t" + arr2.unshift(33) + "\t" + arr2);
+            //toString():把数组转换为字符串，并返回结果。
+            //            alert(arr2.toString());
+            //some():检测数组元素中是否有元素符合指定条件。 与every()对比
+            //            alert(arr2.some(function(num){
+            //                return num > 20;
+            //            }));
+            //join():把数组的所有元素放入一个字符串。  参数:以什么字符隔开
+            //            alert(arr2.join(" "));
+            //filter(): 检测数值元素，并返回符合条件所有元素的数组。
+            alert(arr2.filter(function(x){
+                return x > 20;
+            }));
+
+        }
+    </script>
+
+</head>
+<body>
+<button onclick="test();">测试Array</button>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--suppress ALL -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery选择器</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            //元素选择器
+//            $("button").bind("click", function () {
+//                $("p").hide();
+//            })
+
+            //#id 选择器
+            $("#btn").bind("click", function () {
+                $("#hide").hide();
+            });
+
+            //.class 选择器
+            $(".btn").bind("click", function () {
+                $(".hide").hide();
+            });
+
+            //隐藏所有元素
+            $("#hideAll").bind("click", function () {
+                $("*").hide();
+            });
+
+            $("#hideSelf").bind("click", function () {
+                $(this).hide();
+            });
+        });
+    </script>
+
+</head>
+<body>
+<div id="element_selector">
+    <h4>元素选择器</h4>
+    <p>我是p元素</p>
+    <p>我也是p元素</p>
+    <button>点击消失'p'元素</button>
+</div>
+
+<div>
+    <h4>#id 选择器</h4>
+    <p>我是id为hide的p元素</p>
+    <p>我是id为show的p元素</p>
+    <button id="btn">点击消失id为hide的元素</button>
+</div>
+
+<div>
+    <h4>.class 选择器</h4>
+    <p class="hide">我是class为hide的p元素</p>
+    <p class="show">我是class为show的p元素</p>
+    <button class="btn">点击消失class为hide的元素</button>
+</div>
+
+<br>
+
+<button id="hideAll">点击隐藏所有元素</button>
+
+<br>
+
+<button id="hideSelf">点击隐藏自己</button>
+
+<!--$("*")	选取所有元素-->
+<!--$(this)	选取当前 HTML 元素	-->
+<!--$("p.intro")	选取 class 为 intro 的 <p> 元素-->
+<!--$("p:first")	选取第一个 <p> 元素-->
+<!--$("ul li:first")	选取第一个 <ul> 元素的第一个 <li> 元素-->
+<!--$("ul li:first-child")	选取每个 <ul> 元素的第一个 <li> 元素-->
+<!--$("[href]")	选取带有 href 属性的元素	-->
+<!--$("a[target='_blank']")	选取所有 target 属性值等于 "_blank" 的 <a> 元素	-->
+<!--$("a[target!='_blank']")	选取所有 target 属性值不等于 "_blank" 的 <a> 元素	-->
+<!--$(":button")	选取所有 type="button" 的 <input> 元素 和 <button> 元素	-->
+<!--$("tr:even")	选取偶数位置的 <tr> 元素	-->
+<!--$("tr:odd")	选取奇数位置的 <tr> 元素-->
+
+</body>
+</html>

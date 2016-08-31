@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Date对象</title>
+
+    <script>
+        function test() {
+            //1.表达式
+            var d1 = new Date(); //获取当天日期
+            var d2 = new Date("2016/08/26");
+            var d3 = new Date(2016,07,26); //月份需减1
+            var d4 = new Date(2016,07,26,11,33,0); //月份需减1
+//            alert(d4);
+            //2.方法
+            //设置年/获取年
+//            alert(d1.setFullYear(2017) + "\t" + d1.getFullYear());
+            //设置月/获取月 (0~11)
+//            alert(d1.setMonth(11) + "\t" + d1.getMonth());
+            //设置日/获取日
+//            alert(d1.setDate(28) + "\t" + d1.getDate());
+            //设置时/获取时
+//            alert(d1.setHours(18) + "\t" + d1.getHours());
+            //设置分/获取分
+//            alert(d1.setMinutes(30) + "\t" + d1.getMinutes());
+            //设置秒/获取秒
+//            alert(d1.setSeconds(50) + "\t" + d1.getSeconds());
+            //设置毫秒/获取毫秒
+//            alert(d1.setMilliseconds(200) + "\t" + d1.getMilliseconds());
+            //设置星期/获取星期
+//            alert(d1.getDay());
+            //获取毫秒数
+//            alert(d1.getTime());
+        }
+
+        function compare(){
+            var d = new Date(2018, 11, 11);
+            var today = new Date();
+            if(d > today){
+                alert("今天是2018年11月11日之前");
+            } else {
+                alert("今天是2018年11月11日之后");
+            }
+        }
+
+        function clock() {
+            var today = new Date();
+            var h = today.getHours();
+            var m = checkTime(today.getMinutes());
+            var s = checkTime(today.getSeconds());
+
+            document.getElementById("txt").innerHTML = h + ":" + m + ":" + s;
+
+            setTimeout(function(){
+                clock();
+            }, 500);
+        }
+
+        function checkTime(i) {
+            if(i < 10){
+                i = "0" + i;
+            }
+            return i;
+        }
+    </script>
+
+
+</head>
+<body>
+    <button onclick="test();">测试Date</button>
+    <button onclick="compare();">比较两个日期</button>
+    <button onclick="clock();">显示钟表</button>
+    <div id="txt"></div>
+</body>
+</html>
