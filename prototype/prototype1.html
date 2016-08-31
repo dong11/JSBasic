@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript之原型链(prototype)</title>
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+    <script>
+
+        $(function(){
+            var log = console.log;
+            $("#btn_print").click(function () {
+
+                // 1) primitive types(原生类型)
+                log(typeof 1);                          // number
+                log(typeof "");                         // string
+                log(typeof false);                      // boolean
+                log(typeof undefined);                  // undefined
+                log(typeof null);                       // object       null是个特列，属于原生类型；
+                log(null instanceof Object);            // false
+
+                // 2) object types.(对象类型)
+                log(typeof new Object);                 // object
+                log(typeof new Function);               // function
+                log(typeof new Array);                  // object
+
+            });
+
+            $("#btn_function").click(function () {
+                // 1) prototype属性：一般只有function对象拥有
+                log((new Object).prototype);                    // undefined
+                log([].prototype);                              // undefined
+                log((new Function).prototype);                  // anonymous {}
+                                                                // Function, Object, Array是function对象
+                log(Function.prototype);                        // function()
+                log(Object.prototype);                          // Object {}
+                log(Array.prototype);                           // []
+
+                log((Object.prototype).__proto__);              // null
+                log((Function.prototype).__proto__);            // Object {}
+                log(Object.__proto__);                          // function()
+                log(Function.__proto__);                        // function()
+            });
+            
+            $("#btn_custom").click(function () {
+                function Fn(){}
+                Fn.prototype.name = "Rex";
+                Fn.prototype.gender = "man";
+
+                console.log(Fn.prototype);
+            });
+
+        });
+    </script>
+</head>
+<body>
+    <div>
+        <h2>JavaScript类型</h2>
+        <p>JavaScript中类型分为两大类:原生类型和对象类型</p>
+        <ui>
+            <li>原生类型:number, string, bool, null, undefined</li>
+            <li>对象类型:除了原生类型外的对象都属于对象类型, 包括：object, array, function等</li>
+        </ui>
+        <p>判断原生类型，可以使用typeof关键字；判断对象类型，可以使用toString()方法；</p>
+        <br>
+        <button id="btn_print">打印各个对象的类型(在控制台中查看)</button>
+    </div>
+
+
+    <div>
+        <h2>prototype与__proto__的区别</h2>
+        <p>两者都是对象类型的属性，并非所有的对象类型都有prototype属性，<br>
+            一般只有function对象才有prototype属性(除非主动赋值)，它指向的是一个对象，将来会被多个该function的实例所继承（或者说该对象处于多个实例的原型链上）；<br>
+            __proto__才是真正的原型链的实际指针，然而许多浏览器并不对外公开这个属性，Firefox暴露出这一属性，仅供开发人员理解，但不推荐开发中使用。</p>
+        <button id="btn_function">测试prototype和__proto__</button>
+    </div>
+
+    <div>
+        <button id="btn_custom">自定义</button>
+    </div>
+</body>
+</html>
